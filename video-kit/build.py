@@ -14,6 +14,12 @@ from pathlib import Path
 
 KIT = Path(__file__).resolve().parent
 SR = 44100
+# load .env (KEY=VALUE lines) from the kit folder
+_env = KIT / '.env'
+if _env.exists():
+    for _l in _env.read_text().splitlines():
+        if '=' in _l and not _l.strip().startswith('#'):
+            _k, _v = _l.split('=', 1); os.environ.setdefault(_k.strip(), _v.strip().strip('"').strip("'"))
 
 def die(msg):
     print('\nERROR:', msg); sys.exit(1)
