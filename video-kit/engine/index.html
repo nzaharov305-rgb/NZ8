@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Montserrat;font-weight:700;src:url(node_modules/@fontsource/montserrat/files/montserrat-cyrillic-700-normal.woff2);unicode-range:U+0400-04FF}
+@font-face{font-family:Montserrat;font-weight:700;src:url(node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff2);unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2190-21FF,U+2205}
+@font-face{font-family:Montserrat;font-weight:800;src:url(node_modules/@fontsource/montserrat/files/montserrat-cyrillic-800-normal.woff2);unicode-range:U+0400-04FF}
+@font-face{font-family:Montserrat;font-weight:800;src:url(node_modules/@fontsource/montserrat/files/montserrat-latin-800-normal.woff2);unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2190-21FF,U+2205}
+@font-face{font-family:Montserrat;font-weight:900;src:url(node_modules/@fontsource/montserrat/files/montserrat-cyrillic-900-normal.woff2);unicode-range:U+0400-04FF}
+@font-face{font-family:Montserrat;font-weight:900;src:url(node_modules/@fontsource/montserrat/files/montserrat-latin-900-normal.woff2);unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2190-21FF,U+2205}
+@font-face{font-family:JBM;font-weight:700;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-cyrillic-700-normal.woff2);unicode-range:U+0400-04FF}
+@font-face{font-family:JBM;font-weight:700;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2);unicode-range:U+0000-00FF,U+2000-206F,U+2190-21FF,U+2205}
+html,body{margin:0;background:#070a14;overflow:hidden}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:Montserrat,sans-serif}
+#c{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#hud{position:absolute;left:90px;width:900px;top:236px;display:flex;gap:10px}
+.seg{flex:1;text-align:center;font:800 24px Montserrat;letter-spacing:1px;color:#5b6a93;border-top:6px solid #26325a;padding-top:10px}
+.seg.on{color:#fff;border-color:#FFD43B}
+.seg.last.on{color:#3DDC84;border-color:#3DDC84}
+.seg.done{color:#9fb0d8;border-color:#3b4b7d}
+#hook{position:absolute;left:60px;width:960px;top:340px;text-align:center;opacity:0}
+#hook .a{font:800 44px Montserrat;color:#cfe0ff;letter-spacing:2px}
+#hook .b{font:900 90px/1.0 Montserrat;color:#FF5A4E;margin-top:14px;text-shadow:0 6px 30px rgba(255,90,78,.45)}
+#sub{position:absolute;left:90px;width:900px;top:1385px;text-align:center;opacity:0}
+#sub span.p{display:inline-block;background:rgba(5,8,20,.86);border-radius:22px;padding:14px 30px 16px;font:900 62px/1.1 Montserrat;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+#sub .w{color:#8f9bb8}#sub .w.s{color:#fff}#sub .w.k{color:#FFD43B}
+#nick{position:absolute;left:0;width:1080px;top:1560px;text-align:center;font:800 42px Montserrat;color:#d7e4ff;opacity:.92;letter-spacing:1px}
+#illus{position:absolute;right:160px;top:1500px;font:700 24px JBM;color:#7f8fb8}
+#src{position:absolute;left:90px;top:1500px;font:700 22px JBM;color:#7f8fb8;opacity:0}
+</style></head><body>
+<div id="stage">
+<canvas id="c" width="1080" height="1920"></canvas>
+<div id="hud"></div>
+<div id="hook"><div class="a" id="ha"></div><div class="b" id="hb"></div></div>
+<div id="sub"><span class="p" id="subp"></span></div>
+<div id="src"></div><div id="illus"></div><div id="nick"></div>
+</div>
+<script type="module" src="scene.js"></script>
+</body></html>

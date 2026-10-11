@@ -1,0 +1,118 @@
+{
+  "name": "passkey_en",
+  "lang": "en",
+  "nick": "@aibusiness.tools8",
+  "illus": "illustration",
+  "voice": {
+    "voice_id": "axEk2oXmtSTD1egGzX8U",
+    "model": "eleven_v3",
+    "text": "One SMS code. Two to three minutes. And your account is empty.\nHere's how it works. A fake courier calls and asks for your code. Then a fake bank officer says it's already with criminals, and tells you to move your money to a \"safe\" account.\nThe weak spot? A code can be said out loud. A passkey can't.\nIt's a pair of keys. The secret one never leaves your phone. The website only gets the public one. And you approve with your face or fingerprint, which stay on your device too.\nA passkey is locked to the real website address, so on a fake page it simply won't work. And there's nothing to read out on a phone call.\nFIDO says over three billion passkeys are already in use, and Google made them the default for personal accounts back in twenty twenty-three.\nSo today, open your Google or Apple settings and create one. And never read an SMS code out loud to anyone.\nSave this, send it to someone who still reads out codes, and follow for more. Link in bio. AI Business Tools."
+  },
+  "stages": ["TRAP", "KEYS", "ADDRESS", "FACTS", "ACTION"],
+  "hook": { "a": "ONE SMS CODE", "b": "= EMPTY ACCOUNT", "out": "empty@end+0.1" },
+  "source": { "text": "Source: Kazakhstan MIA, BES.media, Jul 2026", "from": "here's how", "to": "weak spot" },
+  "keywords": ["code", "sms", "passkey", "secret", "public", "key", "never", "fake", "empty", "fido", "billion", "2023"],
+  "subs_fix": { "Fido": "FIDO", "business": "Business", "tools.": "Tools." },
+  "scenes": [
+    { "stage": 0, "start": 0, "cam": { "ox": 1.6 },
+      "objects": [
+        { "type": "phone", "pos": [0, -1.2], "scale": 1.5, "screen": { "items": [
+          { "card": true, "y": 140, "h": 330, "color": "#1d2b60" },
+          { "text": "SMS", "y": 200, "size": 38, "color": "#9fb4ff" },
+          { "text": "Your code:", "y": 290, "size": 40 },
+          { "text": "482 917", "y": 400, "size": 100, "font": "mono", "color": "#FFD43B" } ] } },
+        { "type": "timer", "pos": [0, 1.45], "at": "two", "until": "minutes@end", "end": "02:59" },
+        { "type": "bills", "pos": [0, -1.0, 0.5], "to": [0, 5.5, -3], "at": "two", "n": 16, "spread": 8 }
+      ] },
+    { "stage": 0, "start": "here's how", "cam": { "d": 14.5, "y": 1.6, "ox": 1.2, "ly": -0.4 },
+      "objects": [
+        { "type": "phone", "pos": [0, 3.0], "scale": 0.9, "shake": ["here's how", "safe account@end"], "screen": { "items": [
+          { "circle": true, "y": 400, "r": 110, "color": "#3DDC84" },
+          { "text": "Incoming", "y": 640, "size": 54 } ] } },
+        { "type": "orb", "pos": [-1.9, 0.5], "color": "#ff9f43", "at": "courier-0.2", "fx": "none" },
+        { "type": "label", "text": "\"FAKE COURIER\"", "pos": [-1.9, 1.35, 0.6], "size": 0.28, "color": "#ffb468", "at": "courier" },
+        { "type": "link", "pos": [0, 3.0], "to": [-1.9, 0.5], "color": "#ff9f43", "at": "courier-0.2" },
+        { "type": "packet", "pos": [0, 3.0, 0.3], "to": [-1.9, 0.5, 0.3], "dur": 1.2, "arc": 0.5, "at": "calls", "vanish": true },
+        { "type": "orb", "pos": [1.9, -0.7], "color": "#ff5a4e", "at": "bank officer-0.2", "fx": "none" },
+        { "type": "label", "text": "\"BANK OFFICER\"\n(FAKE)", "pos": [1.9, 0.1, 0.6], "size": 0.26, "color": "#ff8a80", "at": "bank officer" },
+        { "type": "link", "pos": [0, 3.0], "to": [1.9, -0.7], "color": "#ff5a4e", "at": "bank officer-0.2" },
+        { "type": "orb", "shape": "octa", "pos": [-1.7, -3.1], "color": "#b3122b", "at": "criminals-0.4", "fx": "none" },
+        { "type": "label", "text": "CRIMINALS", "pos": [-1.7, -4.05, 0.6], "size": 0.3, "color": "#ff5a6e", "at": "criminals" },
+        { "type": "link", "pos": [-1.9, 0.5], "to": [-1.7, -3.1], "color": "#b3122b", "at": "criminals-0.4" },
+        { "type": "orb", "shape": "box", "pos": [2.0, -3.1], "color": "#3b4770", "at": "safe-0.2", "fx": "none" },
+        { "type": "label", "text": "\"SAFE\"\nACCOUNT", "pos": [2.0, -4.05, 0.6], "size": 0.27, "color": "#9fb0d8", "at": "safe" },
+        { "type": "bills", "pos": [0, 3.0, 0.4], "to": [2.0, -3.0, 0.4], "at": "move", "n": 9, "gap": 0.16, "dur": 0.85, "spread": 0.6 }
+      ] },
+    { "stage": 1, "start": "the weak spot", "cam": { "d": 13, "ox": 1.5, "ly": -0.3 },
+      "objects": [
+        { "type": "phone", "pos": [-1.4, 0.4], "scale": 0.85, "screen": { "items": [
+          { "text": "482", "y": 420, "size": 100, "font": "mono", "color": "#FFD43B" },
+          { "text": "917", "y": 540, "size": 100, "font": "mono", "color": "#FFD43B" } ] } },
+        { "type": "label", "text": "A CODE CAN BE\nSAID ALOUD", "pos": [0.3, 3.3, 0.6], "size": 0.36, "color": "#ff8a80", "glow": "#FF5A4E", "at": "said", "riser": 0.5 },
+        { "type": "rings", "pos": [0.3, 0.8, 0.3], "at": "said", "until": "a passkey can't", "color": "#FF5A4E" },
+        { "type": "key", "pos": [0.4, -2.3, 0.2], "scale": 1.2, "at": "a passkey can't", "fx": "chime", "riser": 0.9 },
+        { "type": "shield", "pos": [0.4, -2.3, 0], "at": "a passkey can't", "hit": ["can't", "can't+0.8"] },
+        { "type": "label", "text": "PASSKEY", "pos": [0.4, -0.65, 0.8], "size": 0.4, "color": "#3DDC84", "glow": "#3DDC84", "at": "a passkey can't", "fx": "none" },
+        { "type": "label", "text": "CAN'T BE SAID ALOUD", "pos": [0.4, -4.0, 0.8], "size": 0.28, "style": "good", "at": "can't" }
+      ] },
+    { "stage": 1, "start": "it's a pair", "cam": { "d": 13.5, "y": 1.0, "ox": -1.6, "ly": -0.3 },
+      "objects": [
+        { "type": "phone", "pos": [0, 0.2], "scale": 1.25, "screen": { "items": [
+          { "text": "PHONE", "y": 130, "size": 40, "color": "#9fb4ff" },
+          { "card": true, "y": 160, "h": 520, "color": "#141d42" } ] } },
+        { "type": "key", "pos": [0, 0.55, 0.45], "scale": 0.62, "at": "secret" },
+        { "type": "label", "text": "SECRET KEY\nnever leaves the phone", "pos": [0, 3.4, 0.6], "size": 0.3, "color": "#FFD43B", "glow": "#FFD43B", "at": "secret", "until": "face-0.1", "fx": "none" },
+        { "type": "label", "text": "WEBSITE", "pos": [0, -3.5, 0.2], "size": 0.36, "style": "info", "at": "website" },
+        { "type": "key", "color": "#3DDC84", "scale": 0.55, "pos": [0.9, 0.5, 0.5], "to": [0, -2.5, 0.6], "dur": 1.3, "arc": 1.0, "at": "website", "fx": "none" },
+        { "type": "label", "text": "PUBLIC KEY", "pos": [1.7, -2.0, 0.5], "size": 0.26, "color": "#3DDC84", "at": "public" },
+        { "type": "face", "pos": [-1.7, 2.1, 0.6], "at": "face", "until": "stay+0.2" },
+        { "type": "fingerprint", "pos": [1.7, 2.1, 0.6], "at": "fingerprint", "until": "stay+0.2" },
+        { "type": "label", "text": "FACE / FINGERPRINT", "pos": [0, -0.95, 0.9], "size": 0.26, "style": "purple", "at": "face", "until": "stay", "fx": "none" },
+        { "type": "cage", "pos": [0, 0.2, 0.1], "at": "stay" },
+        { "type": "label", "text": "STAYS ON\nYOUR DEVICE", "pos": [0, 3.4, 0.9], "size": 0.3, "color": "#3DDC84", "glow": "#3DDC84", "at": "stay", "fx": "chime" }
+      ] },
+    { "stage": 2, "start": "a passkey is locked", "cam": { "ox": 1.4, "ly": -0.1 },
+      "objects": [
+        { "type": "label", "text": "bank.example", "pos": [0, 3.0, 0], "size": 0.42, "fam": "JBM", "font": "700", "style": "good", "at": "real-0.2", "riser": 0.6 },
+        { "type": "label", "text": "REAL ADDRESS", "pos": [0, 3.9, 0.3], "size": 0.26, "color": "#3DDC84", "at": "real", "fx": "none" },
+        { "type": "label", "text": "example addresses", "pos": [1.6, 4.4, 0.3], "style": "note", "size": 0.18, "at": "real", "fx": "none" },
+        { "type": "key", "scale": 0.8, "pos": [-3.0, 1.5, 0.6], "to": [-0.2, 2.05, 0.6], "dur": 1.2, "arc": 0.3, "at": "real-0.3", "until": "simply", "fx": "none" },
+        { "type": "check", "pos": [2.4, 3.0, 0.6], "at": "address" },
+        { "type": "label", "text": "bank-login.example", "pos": [0, 0, 0], "size": 0.32, "fam": "JBM", "font": "700", "style": "bad", "at": "fake page" },
+        { "type": "label", "text": "FAKE PAGE", "pos": [0, -0.95, 0.3], "size": 0.26, "color": "#ff8a80", "at": "fake page", "fx": "none" },
+        { "type": "key", "scale": 0.8, "pos": [-0.2, 2.05, 0.6], "to": [-1.5, 1.0, 0.6], "dur": 0.8, "arc": -0.6, "at": "simply", "fx": "none" },
+        { "type": "cross", "pos": [2.4, 0, 0.6], "at": "won't" },
+        { "type": "phone", "pos": [-1.7, -2.7, 0.2], "scale": 0.55, "at": "nothing", "screen": { "items": [
+          { "circle": true, "y": 420, "r": 110, "color": "#3DDC84" } ] } },
+        { "type": "label", "text": "∅  NOTHING TO\nREAD OUT", "pos": [1.0, -2.6, 0.5], "size": 0.3, "style": "good", "at": "read out" }
+      ] },
+    { "stage": 3, "start": "fido says", "cam": { "d": 14, "ox": -1.4, "ly": 0.2 },
+      "objects": [
+        { "type": "bar", "pos": [0, -3.35, 0], "h": 3.5, "grow": 2.2, "at": "fido", "counter": { "to": 3, "final": "3+", "decimals": 1 }, "unit": "BILLION passkeys" },
+        { "type": "label", "text": "FIDO Alliance, 2025", "pos": [0, -4.0, 0.3], "style": "note", "size": 0.2, "at": "fido", "fx": "none" },
+        { "type": "label", "text": "2023\nGoogle made passkeys the default\nfor personal accounts", "pos": [-0.2, 3.8, 0.6], "size": 0.24, "style": "info", "at": "google" }
+      ] },
+    { "stage": 4, "start": "so today", "cam": { "d": 13, "y": 1.0, "ox": 1.4, "ly": -0.1 },
+      "objects": [
+        { "type": "phone", "pos": [0, -0.6], "scale": 1.0, "screen": { "items": [
+          { "text": "Settings", "y": 140, "size": 44, "color": "#9fb4ff" },
+          { "card": true, "y": 200, "h": 100 }, { "card": true, "y": 330, "h": 100 },
+          { "card": true, "y": 460, "h": 100, "color": "#1f7a4a", "text": "Create passkey", "size": 40 },
+          { "card": true, "y": 590, "h": 100 }, { "card": true, "y": 720, "h": 100 } ] } },
+        { "type": "label", "text": "Settings\nGoogle or Apple", "pos": [0, 3.3, 0.5], "size": 0.3, "style": "info", "at": "open" },
+        { "type": "label", "text": "Create a passkey", "pos": [0, 1.85, 0.5], "size": 0.32, "style": "good", "at": "create" },
+        { "type": "check", "pos": [2.3, 1.9, 0.8], "at": "create one@end", "scale": 0.9 },
+        { "type": "label", "text": "NEVER READ OUT\nAN SMS CODE", "pos": [0, -2.3, 1.0], "size": 0.42, "style": "stamp", "rot": -0.13, "at": "sms#2", "riser": 0.7 }
+      ] },
+    { "stage": 4, "start": "save this", "cam": { "d": 13, "ox": 0, "ly": -0.1 },
+      "objects": [
+        { "type": "label", "text": "SAVE THIS", "pos": [0, 3.5, 0.4], "size": 0.4, "style": "warn", "minW": 4.6, "at": "save" },
+        { "type": "label", "text": "SEND TO A FRIEND", "pos": [0, 2.25, 0.4], "size": 0.4, "style": "green", "minW": 4.6, "at": "send" },
+        { "type": "label", "text": "FOLLOW", "pos": [0, 1.0, 0.4], "size": 0.4, "style": "accent", "minW": 4.6, "at": "follow" },
+        { "type": "label", "text": "↑  LINK IN BIO", "pos": [0, -0.3, 0.4], "size": 0.32, "style": "good", "at": "link" },
+        { "type": "label", "text": "@aibusiness.tools8", "pos": [0, -1.7, 0.4], "size": 0.4, "fam": "JBM", "font": "700", "glow": "#4DD0FF", "at": "ai business", "fx": "bell" },
+        { "type": "phone", "pos": [0, -3.1, 0.2], "scale": 0.5, "at": "save", "fx": "none", "screen": { "items": [
+          { "text": "✓", "y": 460, "size": 300, "color": "#3DDC84" }, { "text": "passkey", "y": 700, "size": 54 } ] } }
+      ] }
+  ]
+}
